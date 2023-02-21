@@ -1,9 +1,18 @@
 <p>bonjour, voici le stream, juste sous vos yeux !</p>
-<iframe
-  src="https://pcast.phenixrts.com/channel/?token=DIGEST:eyJhcHBsaWNhdGlvbklkIjoibXl0b3VybGl2ZS5jbyIsImRpZ2VzdCI6IkF0M09WTmRUVlNSQjJia1RlcEhob2EvdjZjNjF6YjBpVTlUMENMUWZ1enpkRWxKWXZhNVkrMjRqb0pPQzR6RkxGelhHOTUxTE1QNm9Oc0JaaDlJejZRPT0iLCJ0b2tlbiI6IntcImV4cGlyZXNcIjoxNjc2OTg1MzMwNTU3LFwidXJpXCI6XCJodHRwczovL3BjYXN0LnBoZW5peHJ0cy5jb21cIixcInJlcXVpcmVkVGFnXCI6XCJjaGFubmVsSWQ6ZXVyb3BlLWNlbnRyYWwjbXl0b3VybGl2ZS5jbyN0ZXN0QXVkaW8uV0pXczFadzNzaU1RXCJ9In0=#testAudio"
+<link href="style.css" rel="stylesheet" />
+<iframe class="iframe"
+  src="https://pcast.phenixrts.com/channel/?token=DIGEST:eyJhcHBsaWNhdGlvbklkIjoibXl0b3VybGl2ZS5jbyIsImRpZ2VzdCI6IncvZWR6YSs5M1BGS1dLamlJK0ZZZ1doNG8vL000bjI2YmQ5NW9JUURSbUlkanZpWXBjYmk0UGtWQzBTWFhZSVFNK2U2UytNSHR4U2lOSHVZSmNtWmhRPT0iLCJ0b2tlbiI6IntcImV4cGlyZXNcIjoxNjc3NTczMjIwNzQ4LFwidXJpXCI6XCJodHRwczovL3BjYXN0LnBoZW5peHJ0cy5jb21cIixcInJlcXVpcmVkVGFnXCI6XCJjaGFubmVsSWQ6ZXVyb3BlLWNlbnRyYWwjbXl0b3VybGl2ZS5jbyN0ZXN0QXVkaW8uV0pXczFadzNzaU1RXCJ9In0=#testAudio?autoplay=1"
   frameborder="0"
   allow="autoplay; encrypted-media"
-  allowfullscreen
-  webkitallowfullscreen
+  controls autoplay
+  allow='autoplay'
 >
 </iframe>
+<script defer>
+    window.addEventListener("message", receiveMessage, false);
+
+    function receiveMessage(event) {
+        console.log({timeStamp: event.timeStamp, data: event.data});
+    }
+    
+</script>
