@@ -4,22 +4,37 @@
     <link href="style.css" rel="stylesheet" />
     <div id="container">
     <div id="block"></div>
-        <iframe class="audioButton"
+<!--         <iframe class="audioButton"
         src="https://pcast.phenixrts.com/channel/?token=DIGEST:eyJhcHBsaWNhdGlvbklkIjoibXl0b3VybGl2ZS5jbyIsImRpZ2VzdCI6IncvZWR6YSs5M1BGS1dLamlJK0ZZZ1doNG8vL000bjI2YmQ5NW9JUURSbUlkanZpWXBjYmk0UGtWQzBTWFhZSVFNK2U2UytNSHR4U2lOSHVZSmNtWmhRPT0iLCJ0b2tlbiI6IntcImV4cGlyZXNcIjoxNjc3NTczMjIwNzQ4LFwidXJpXCI6XCJodHRwczovL3BjYXN0LnBoZW5peHJ0cy5jb21cIixcInJlcXVpcmVkVGFnXCI6XCJjaGFubmVsSWQ6ZXVyb3BlLWNlbnRyYWwjbXl0b3VybGl2ZS5jbyN0ZXN0QXVkaW8uV0pXczFadzNzaU1RXCJ9In0=#testAudio?autoplay=1"
         frameborder="0"
         allow="autoplay; encrypted-media"
         controls autoplay
-        allow='autoplay'
-        >
-        </iframe>
+        > 
+        </iframe> -->
     </div>
 </body>
 <script defer>
 
+    let radioLoader = document.createElement("iframe");
+    radioLoader.setAttribute(
+      "src",
+      "https://pcast.phenixrts.com/channel/?token=DIGEST:eyJhcHBsaWNhdGlvbklkIjoibXl0b3VybGl2ZS5jbyIsImRpZ2VzdCI6IncvZWR6YSs5M1BGS1dLamlJK0ZZZ1doNG8vL000bjI2YmQ5NW9JUURSbUlkanZpWXBjYmk0UGtWQzBTWFhZSVFNK2U2UytNSHR4U2lOSHVZSmNtWmhRPT0iLCJ0b2tlbiI6IntcImV4cGlyZXNcIjoxNjc3NTczMjIwNzQ4LFwidXJpXCI6XCJodHRwczovL3BjYXN0LnBoZW5peHJ0cy5jb21cIixcInJlcXVpcmVkVGFnXCI6XCJjaGFubmVsSWQ6ZXVyb3BlLWNlbnRyYWwjbXl0b3VybGl2ZS5jbyN0ZXN0QXVkaW8uV0pXczFadzNzaU1RXCJ9In0=#testAudio?autoplay=1"
+    );
+    radioLoader.setAttribute(
+      "frameborder",
+      "0"
+    );
+    radioLoader.setAttribute(
+      "allow",
+      "autoplay; encrypted-media"
+    );
+    radioLoader.classList.add("audioButton");
+    document.getElementById('container').appendChild(radioLoader);
+
     setInterval(log, 3000);
 
     function log(){
-        let iframe = document.getElementById('iframe');
+        let iframe = document.querySelectorAll('iframe');
         let muteAudio = window.document.getElementById('muteAudio');
         //videoElement 
         console.log(iframe);
@@ -30,5 +45,4 @@
     function receiveMessage(event) {
         console.log({timeStamp: event.timeStamp, data: event.data});
     }
-
 </script>
