@@ -3,6 +3,7 @@
     <body>
         <p>bonjour, voici le stream audio, juste sous vos yeux !</p>
         <link href="style.css" rel="stylesheet" />
+        <button id="buttontoto">OUVERTURE POP UP</button>
         <div id="container">
         <div id="block"></div>
 <!-- <iframe class="audioButton"
@@ -47,4 +48,19 @@
     function receiveMessage(event) {
         console.log({timeStamp: event.timeStamp, data: event.data});
     }
+
+    function onCreated(windowInfo) {
+  console.log(`Created window: ${windowInfo.id}`);
+}
+
+function onError(error) {
+  console.log(`Error: ${error}`);
+}
+
+let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+width=600,height=300,left=100,top=100`;
+
+document.getElementById('buttontoto').onclick = () => {
+    open('https://www.google.fr/', 'test', params);
+}
 </script>
