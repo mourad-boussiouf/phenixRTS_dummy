@@ -3,7 +3,7 @@
     <body>
         <p>bonjour, voici le stream audio, juste sous vos yeux !</p>
         <link href="style.css" rel="stylesheet" />
-        <button id="buttontoto">OUVERTURE POP UP</button>
+        <button onclick="openPopup()">Open Popup</button>
         <div id="container">
         <div id="block"></div>
 <!-- <iframe class="audioButton"
@@ -57,10 +57,24 @@ function onError(error) {
   console.log(`Error: ${error}`);
 }
 
-let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
-width=600,height=300,left=100,top=100`;
 
-document.getElementById('buttontoto').onclick = () => {
-    open('https://www.google.fr/', 'test', params);
+function openPopup() {
+  var popupUrl = "https://www.example.com/popup.html";
+
+  var popupWidth = 400;
+  var popupHeight = 300;
+
+  var leftPosition = (screen.width - popupWidth) / 2;
+  var topPosition = (screen.height - popupHeight) / 2;
+
+  var popupWindow = window.open(
+    popupUrl,
+    "popup",
+    "width=" + popupWidth + ", height=" + popupHeight + ", left=" + leftPosition + ", top=" + topPosition + ", resizable=yes, scrollbars=yes"
+  );
+
+  if (window.focus) {
+    popupWindow.focus();
+  }
 }
 </script>
