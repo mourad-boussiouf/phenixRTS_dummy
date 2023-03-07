@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/mourad-boussiouf/phenixRTS_dummy.git",
   "author": "mourad-boussiouf <mourad.boussiouf@laplateforme.io>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "phenix-web-sdk": "^2022.0.2"
+  }
 }
