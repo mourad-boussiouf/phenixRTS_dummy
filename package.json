@@ -1,0 +1,8 @@
+{
+  "name": "phenixRTS_dummy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mourad-boussiouf/phenixRTS_dummy.git",
+  "author": "mourad-boussiouf <mourad.boussiouf@laplateforme.io>",
+  "license": "MIT"
+}
