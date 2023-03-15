@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "phenixRTS_dummy",
   "version": "1.0.0",
   "main": "index.js",
