@@ -1,7 +1,11 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
-const path = require('path');
+/* const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { myFunction } = require('./myModule'); */
+
+import { path } from 'path';
+import { HtmlWebpackPlugin } from 'html-webpack-plugin';
 
 const isProduction = process.env.NODE_ENV == 'production';
 
