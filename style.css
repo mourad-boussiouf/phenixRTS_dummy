@@ -2,8 +2,8 @@
 .audioButton {
     position: absolute;
     min-width: 178px !important;
-    width: 30vw;
-    height: 18vh;
+    width: 26vw;
+    height: 65px;
     object-fit: cover;
     background-color: rgba(0, 0, 0, 0);
     z-index: 998;
@@ -19,7 +19,7 @@
     position: absolute;
     min-width: 178px !important;
     left: 84px;
-    width: 26vw;
+    width: 24vw;
     height: 65px;
     background-color: #153F46;
     z-index: 999;

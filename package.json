@@ -7,6 +7,7 @@
   "author": "mourad-boussiouf <mourad.boussiouf@laplateforme.io>",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.21.3",
     "babel-loader": "^9.1.2",
     "html-webpack-plugin": "^5.5.0",
     "phenix-web-sdk": "^2022.0.2",
