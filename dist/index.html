@@ -1,0 +1,80 @@
+
+<html><head><script defer src="main.js"></script></head>
+    <body>
+        <p>bonjour, voici le stream audio, juste sous vos yeux !</p>
+        <link href="style.css" rel="stylesheet" />
+        <button onclick="openPopup()">Open Popup</button>
+        <div id="container">
+        <div id="block"></div>
+<!-- <iframe class="audioButton"
+            src="https://pcast.phenixrts.com/channel/?token=DIGEST:eyJhcHBsaWNhdGlvbklkIjoibXl0b3VybGl2ZS5jbyIsImRpZ2VzdCI6IncvZWR6YSs5M1BGS1dLamlJK0ZZZ1doNG8vL000bjI2YmQ5NW9JUURSbUlkanZpWXBjYmk0UGtWQzBTWFhZSVFNK2U2UytNSHR4U2lOSHVZSmNtWmhRPT0iLCJ0b2tlbiI6IntcImV4cGlyZXNcIjoxNjc3NTczMjIwNzQ4LFwidXJpXCI6XCJodHRwczovL3BjYXN0LnBoZW5peHJ0cy5jb21cIixcInJlcXVpcmVkVGFnXCI6XCJjaGFubmVsSWQ6ZXVyb3BlLWNlbnRyYWwjbXl0b3VybGl2ZS5jbyN0ZXN0QXVkaW8uV0pXczFadzNzaU1RXCJ9In0=#testAudio?autoplay=1"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            controls autoplay
+            > 
+            </iframe> -->
+        </div>
+    </body>
+</html>
+<script defer>
+
+    let radioLoader = document.createElement("iframe");
+    radioLoader.setAttribute(
+      "src",
+      "https://pcast.phenixrts.com/channel/?token=DIGEST:eyJhcHBsaWNhdGlvbklkIjoibXl0b3VybGl2ZS5jbyIsImRpZ2VzdCI6IncvZWR6YSs5M1BGS1dLamlJK0ZZZ1doNG8vL000bjI2YmQ5NW9JUURSbUlkanZpWXBjYmk0UGtWQzBTWFhZSVFNK2U2UytNSHR4U2lOSHVZSmNtWmhRPT0iLCJ0b2tlbiI6IntcImV4cGlyZXNcIjoxNjc3NTczMjIwNzQ4LFwidXJpXCI6XCJodHRwczovL3BjYXN0LnBoZW5peHJ0cy5jb21cIixcInJlcXVpcmVkVGFnXCI6XCJjaGFubmVsSWQ6ZXVyb3BlLWNlbnRyYWwjbXl0b3VybGl2ZS5jbyN0ZXN0QXVkaW8uV0pXczFadzNzaU1RXCJ9In0=#testAudio?autoplay=1"
+    );
+    radioLoader.setAttribute(
+      "frameborder",
+      "0"
+    );
+    radioLoader.setAttribute(
+      "allow",
+      "autoplay; encrypted-media"
+    );
+    radioLoader.classList.add("audioButton");
+    document.getElementById('container').appendChild(radioLoader);
+
+    setInterval(log, 3000);
+
+    function log(){
+        let iframe = document.querySelectorAll('iframe');
+        let muteAudio = window.document.getElementById('muteAudio');
+        //videoElement 
+        console.log(iframe);
+    }
+    
+    window.addEventListener("message", receiveMessage, false);
+
+    function receiveMessage(event) {
+        console.log({timeStamp: event.timeStamp, data: event.data});
+    }
+
+    function onCreated(windowInfo) {
+  console.log(`Created window: ${windowInfo.id}`);
+}
+
+function onError(error) {
+  console.log(`Error: ${error}`);
+}
+
+
+function openPopup() {
+  var popupUrl = "https://www.example.com/popup.html";
+
+  var popupWidth = 400;
+  var popupHeight = 300;
+
+  var leftPosition = (screen.width - popupWidth) / 2;
+  var topPosition = (screen.height - popupHeight) / 2;
+
+  var popupWindow = window.open(
+    popupUrl,
+    "popup",
+    "width=" + popupWidth + ", height=" + popupHeight + ", left=" + leftPosition + ", top=" + topPosition + ", resizable=yes, scrollbars=yes"
+  );
+
+  if (window.focus) {
+    popupWindow.focus();
+  }
+}
+</script>
