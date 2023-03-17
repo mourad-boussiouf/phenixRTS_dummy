@@ -9,6 +9,10 @@ console.log("1 WWWWWWWW",sdk);
 
 console.log("2 WWWWWWWW",sdk);
 
+const audioButton = document.getElementById('audioButton');
+
+audioButton.addEventListener("click", clickEvent);
+
 function clickEvent(){
-    console.log("click")
+    console.log("click bouton")
 }
