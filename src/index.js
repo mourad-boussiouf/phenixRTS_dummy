@@ -16,3 +16,5 @@ audioButton.addEventListener("click", clickEvent);
 function clickEvent(){
     console.log("click bouton")
 }
+
+var isIphoneIpad = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
