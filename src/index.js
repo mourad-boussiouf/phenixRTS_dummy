@@ -18,3 +18,4 @@ function clickEvent(){
 }
 
 var isIphoneIpad = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+console.log(isIphoneIpad);
