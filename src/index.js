@@ -3,9 +3,9 @@ import "./style.css";
 
 console.log("1 WWWWWWWW",sdk);
 
-console.log("1 WWWWWWWW",sdk);
-
 console.log("2 WWWWWWWW",sdk);
+
+console.log("3 WWWWWWWW",sdk);
 
 const audioButton = document.getElementById('audioButton');
 audioButton.addEventListener("click", clickEvent);
@@ -158,13 +158,13 @@ function _hash(key) {
 }
 
 const xyz = new HashTable();
-xyz.set("kikoo", "patate");
-xyz.set("helloguys", 150);
-
+xyz.set("aes", key1);
+xyz.set("blowfish", key2);
+xyz.set("twofish", key3);
+xyz.set("rsa", key4);
 
 xyz.display();
-
-
+console.log
 
 //r a voir
 const key = 42;
