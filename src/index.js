@@ -8,7 +8,6 @@ console.log("1 WWWWWWWW",sdk);
 console.log("2 WWWWWWWW",sdk);
 
 const audioButton = document.getElementById('audioButton');
-
 audioButton.addEventListener("click", clickEvent);
 
 function clickEvent(){
@@ -23,7 +22,7 @@ async function callStackHandler() {
   return await new Promise((res) => setTimeout(res, 0));
 }
 
-let aes1 = "RElHRVNUOmV5SmhjSEJzYVdOaGRHbHZia2xrSWpvaWJYbDBiM1Z5YkdsMlpTNWpieUlzSW1ScFoyVnpkQ0k2SW5SQmVVcHNTMWtyV21Wd2NEZHBablpXUlhkU1dTdHpWMnBTYkRoVU5IUXlNa2xZV1U5NFJVYzBUakpuWlVVMVRETm1lRFZyVmxSTFoxRkxiVVl2Y0VFeWFIQjBkbTFJZW10dU1FVkNiRXM0YTNweWN6Tm5QVDBpTENKMGIydGxiaUk2SW50Y0ltVjRjR2x5WlhOY0lqb3hOamd4TmpNek5qYzROak16TEZ3aWRYSnBYQ0k2WENKb2RIUndjem92TDNCallYTjBMbkJvWlc1cGVISjBjeTVqYjIxY0lpeGNJbkpsY1hWcGNtVmtWR0ZuWENJNlhDSmphR0Z1Ym1Wc1NXUTZaWFZ5YjNCbExXTmxiblJ5WVd3amJYbDBiM1Z5YkdsMlpTNWpieU4wWlhOMFFYVmthVzh1VjBwWGN6RmFkek56YVUxUlhDSjlJbjA9I3Rlc3RBdWRpbw=="
+let aes1 = "RElHRVNUOmV5SmhjSEJzYVdOaGRHbHZia2xrSWpvaWJYbDBiM1Z5YkdsMlpTNWpieUlzSW1ScFoyVnpkQ0k2SWpsVWJ6VTVSV0p5UVUxeGIxRXdSbUZPT1ZveVdGTllaVEpoTW5wbFRIRXlialpyUlROWk5FeHZSRmxtSzFkaVdtOVhXWEZNVjJaYUszcDZlREJWU1ZOU1ZGWmFZMHBaVmsxMmFsTmFaelpNZEZSbGJqbFJQVDBpTENKMGIydGxiaUk2SW50Y0ltVjRjR2x5WlhOY0lqb3hPVGswT0RNNU9ETTFOakF5TEZ3aWRYSnBYQ0k2WENKb2RIUndjem92TDNCallYTjBMbkJvWlc1cGVISjBjeTVqYjIxY0lpeGNJbkpsY1hWcGNtVmtWR0ZuWENJNlhDSmphR0Z1Ym1Wc1NXUTZaWFZ5YjNCbExXTmxiblJ5WVd3amJYbDBiM1Z5YkdsMlpTNWpieU4wWlhOMFFYVmthVzh1VjBwWGN6RmFkek56YVUxUlhDSjlJbjA="
 
 function string2Bin(str){
   var result = [];
@@ -42,7 +41,7 @@ function bin2String(araille){
 }
  //laes est un base64 du token
 function getBytes() {
-  let aes = "RElHRVNUOmV5SmhjSEJzYVdOaGRHbHZia2xrSWpvaWJYbDBiM1Z5YkdsMlpTNWpieUlzSW1ScFoyVnpkQ0k2SW5SQmVVcHNTMWtyV21Wd2NEZHBablpXUlhkU1dTdHpWMnBTYkRoVU5IUXlNa2xZV1U5NFJVYzBUakpuWlVVMVRETm1lRFZyVmxSTFoxRkxiVVl2Y0VFeWFIQjBkbTFJZW10dU1FVkNiRXM0YTNweWN6Tm5QVDBpTENKMGIydGxiaUk2SW50Y0ltVjRjR2x5WlhOY0lqb3hOamd4TmpNek5qYzROak16TEZ3aWRYSnBYQ0k2WENKb2RIUndjem92TDNCallYTjBMbkJvWlc1cGVISjBjeTVqYjIxY0lpeGNJbkpsY1hWcGNtVmtWR0ZuWENJNlhDSmphR0Z1Ym1Wc1NXUTZaWFZ5YjNCbExXTmxiblJ5WVd3amJYbDBiM1Z5YkdsMlpTNWpieU4wWlhOMFFYVmthVzh1VjBwWGN6RmFkek56YVUxUlhDSjlJbjA9I3Rlc3RBdWRpbw=="
+  let aes = "RElHRVNUOmV5SmhjSEJzYVdOaGRHbHZia2xrSWpvaWJYbDBiM1Z5YkdsMlpTNWpieUlzSW1ScFoyVnpkQ0k2SWpsVWJ6VTVSV0p5UVUxeGIxRXdSbUZPT1ZveVdGTllaVEpoTW5wbFRIRXlialpyUlROWk5FeHZSRmxtSzFkaVdtOVhXWEZNVjJaYUszcDZlREJWU1ZOU1ZGWmFZMHBaVmsxMmFsTmFaelpNZEZSbGJqbFJQVDBpTENKMGIydGxiaUk2SW50Y0ltVjRjR2x5WlhOY0lqb3hPVGswT0RNNU9ETTFOakF5TEZ3aWRYSnBYQ0k2WENKb2RIUndjem92TDNCallYTjBMbkJvWlc1cGVISjBjeTVqYjIxY0lpeGNJbkpsY1hWcGNtVmtWR0ZuWENJNlhDSmphR0Z1Ym1Wc1NXUTZaWFZ5YjNCbExXTmxiblJ5WVd3amJYbDBiM1Z5YkdsMlpTNWpieU4wWlhOMFFYVmthVzh1VjBwWGN6RmFkek56YVUxUlhDSjlJbjA="
   var hash = [];
   var bytes = [];
   for (var i = 0; i < aes.length; i++) {
@@ -68,44 +67,70 @@ let key3 = "";
 var keyBin3 = new Array;
 let key4 = "";
 var keyBin4 = new Array;
-for (let index = 0; index < 137; index++) {
+for (let index = 0; index < 133; index++) {
   keyBin1.push(charState[index]);
   key1 = keyBin1.join(" ");
-}for (let index = 137; index < 274; index++) {
+}for (let index = 133; index < 266; index++) {
   keyBin2.push(charState[index]);
   key2 = keyBin2.join(" ");
-}for (let index = 274; index < 411; index++) {
+}for (let index = 266; index < 399; index++) {
   keyBin3.push(charState[index]);
   key3 = keyBin3.join(" ");
-}for (let index = 411; index < 548; index++) {
+}for (let index = 399; index < 532; index++) {
   keyBin4.push(charState[index]);
   key4 = keyBin3.join(" ");
 }
+console.log ("KEY1",key1,"KEY2",key2,"KEY3",key3,"KEY4",key4);
 
-console.log (charState[0],charState[1], charState[2])
-console.log ("KEY1",key1);
-console.log ("KEY2",key2);
-console.log ("KEY3",key3);
-console.log ("KEY4",key4);
-
-function _hash(key) {
-  let hash = 0;
-  for (let i = 0; i < key.length; i++){
-    hash += key.charCodeAt(i);
+class HashTable {
+  constructor() {
+    this.table = new Array(127);
+    this.size = 0;
   }
-  return hash;
+
+  _hash(key) {
+    let hash = 0;
+    for (let i = 0; i < key.length; i++) {
+      hash += key.charCodeAt(i);
+    }
+    return hash % this.table.length;
+  }
+
+  set(key, value) {
+    const index = this._hash(key);
+    this.table[index] = [key, value];
+    this.size++;
+  }
+
+  get(key) {
+    const target = this._hash(key);
+    return this.table[target];
+  }
+
+  remove(key) {
+    const index = this._hash(key);
+
+    if (this.table[index] && this.table[index].length) {
+      this.table[index] = [];
+      this.size--;
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
-
-console.log (_hash(token));
-
+const xyz = new HashTable();
+xyz.set(key1, 300);
+xyz.set(key2, 100);
+xyz.set("Spain", 110)
 
 //r a voir
 const key = 42;
 const token = "DIGEST:eyJhcHBsaWNhdGlvbklkIjoibXl0b3VybGl2ZS5jbyIsImRpZ2VzdCI6IjJyeTFzL0RXM2lXZUh3VnJQK0hRMHUyTDR4dXZORVRjZm9PRmsxY0hjVTBVRXBUa04wWlNrNTRxeXB1dFA5N05IdzFwcHJzbEcyYkx6UitIYmM3d3BRPT0iLCJ0b2tlbiI6IntcImV4cGlyZXNcIjoxNjc5NzM5Njk5MTQ2LFwidXJpXCI6XCJodHRwczovL3BjYXN0LnBoZW5peHJ0cy5jb21cIixcInJlcXVpcmVkVGFnXCI6XCJjaGFubmVsSWQ6ZXVyb3BlLWNlbnRyYWwjbXl0b3VybGl2ZS5jbyN0ZXN0QXVkaW8uV0pXczFadzNzaU1RXCJ9In0=";
 const encodedToken = encodeURIComponent(token);
 const base = "https://pcast.phenixrts.com/channel/?";
-console.log(key);
-
+console.log("42",key);
+console.log (_hash(token));
 
 function tokenKeyRetrieveRecursion(hash){
   let finalToken = "3VybGl2ZS5jbyIsImRpZ2VzdCI6IjJyeTFzL0RXM2lXZUh3VnJQK0hRMHUyTDR4dXZORVRjZm9PRms";
@@ -118,6 +143,7 @@ function tokenKeyRetrieveRecursion(hash){
   this.tokenKeyRetrieveRecursion(true);
 } 
 tokenKeyRetrieveRecursion(true);
+
 const queryParams = `token=${encodedToken}#testAudio`;
 const url = base + queryParams;
 console.log("PROCESS",tokenKeyRetrieveRecursion(true));
