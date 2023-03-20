@@ -82,7 +82,13 @@ for (let index = 0; index < 133; index++) {
 }
 console.log ("KEY1",key1,"KEY2",key2,"KEY3",key3,"KEY4",key4);
 
-class HashTable {
+function _hash(key) {
+  let hash = 0;
+  for (let i = 0; i < key.length; i++){
+    hash += key.charCodeAt(i);
+  }
+  return hash;
+}class HashTable {
   constructor() {
     this.table = new Array(127);
     this.size = 0;
@@ -98,31 +104,67 @@ class HashTable {
 
   set(key, value) {
     const index = this._hash(key);
-    this.table[index] = [key, value];
+    if (this.table[index]) {
+      for (let i = 0; i < this.table[index].length; i++) {
+        if (this.table[index][i][0] === key) {
+          this.table[index][i][1] = value;
+          return;
+        }
+      }
+      this.table[index].push([key, value]);
+    } else {
+      this.table[index] = [];
+      this.table[index].push([key, value]);
+    }
     this.size++;
   }
 
   get(key) {
-    const target = this._hash(key);
-    return this.table[target];
+    const index = this._hash(key);
+    if (this.table[index]) {
+      for (let i = 0; i < this.table.length; i++) {
+        if (this.table[index][i][0] === key) {
+          return this.table[index][i][1];
+        }
+      }
+    }
+    return undefined;
   }
 
   remove(key) {
     const index = this._hash(key);
 
     if (this.table[index] && this.table[index].length) {
-      this.table[index] = [];
-      this.size--;
-      return true;
+      for (let i = 0; i < this.table.length; i++) {
+        if (this.table[index][i][0] === key) {
+          this.table[index].splice(i, 1);
+          this.size--;
+          return true;
+        }
+      }
     } else {
       return false;
     }
   }
+
+  display() {
+    this.table.forEach((values, index) => {
+      const chainedValues = values.map(
+        ([key, value]) => `[ ${key}: ${value} ]`
+      );
+      console.log("HASH STRUCTURE:",`${index}: ${chainedValues}`);
+    });
+  }
 }
+
 const xyz = new HashTable();
-xyz.set(key1, 300);
-xyz.set(key2, 100);
-xyz.set("Spain", 110)
+xyz.set("kikoo", "patate");
+xyz.set("helloguys", 150);
+
+
+xyz.display();
+
+
 
 //r a voir
 const key = 42;
@@ -131,6 +173,7 @@ const encodedToken = encodeURIComponent(token);
 const base = "https://pcast.phenixrts.com/channel/?";
 console.log("42",key);
 console.log (_hash(token));
+console.log ("display hashtable", )
 
 function tokenKeyRetrieveRecursion(hash){
   let finalToken = "3VybGl2ZS5jbyIsImRpZ2VzdCI6IjJyeTFzL0RXM2lXZUh3VnJQK0hRMHUyTDR4dXZORVRjZm9PRms";
