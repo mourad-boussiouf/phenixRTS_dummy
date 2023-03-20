@@ -29,7 +29,7 @@ let aes1 = "RElHRVNUOmV5SmhjSEJzYVdOaGRHbHZia2xrSWpvaWJYbDBiM1Z5YkdsMlpTNWpieUlz
 function string2Bin(str) {
   var result = [];
   for (var i = 0; i < str.length; i++) {
-    result.push(str.charCodeAt(i).toString(2));
+    result.push(parseInt(str.charCodeAt(i).toString(2)));
   }
   return result;
 }
