@@ -68,19 +68,19 @@ var keyBin3 = new Array;
 let key4 = "";
 var keyBin4 = new Array;
 for (let index = 0; index < 133; index++) {
-  keyBin1.push(charState[index]);
-  key1 = keyBin1.join(" ");
-}for (let index = 133; index < 266; index++) {
-  keyBin2.push(charState[index]);
-  key2 = keyBin2.join(" ");
-}for (let index = 266; index < 399; index++) {
-  keyBin3.push(charState[index]);
-  key3 = keyBin3.join(" ");
-}for (let index = 399; index < 532; index++) {
-  keyBin4.push(charState[index]);
-  key4 = keyBin3.join(" ");
-}
-console.log ("KEY1",key1,"KEY2",key2,"KEY3",key3,"KEY4",key4);
+  keyBin1.push(string2Bin(aes1)[index]);
+}key1 = keyBin1.join(" ");
+for (let index = 133; index < 266; index++) {
+  keyBin2.push(string2Bin(aes1)[index]);
+}key2 = keyBin2.join(" ");
+for (let index = 266; index < 399; index++) {
+  keyBin3.push(string2Bin(aes1)[index]);
+}key3 = keyBin3.join(" ");
+for (let index = 399; index < 532; index++) {
+  keyBin4.push(string2Bin(aes1)[index]);
+}key4 = keyBin4.join(" ");
+let test = key1+" "+key2+" "+key3+" "+key4;
+console.log ("blow",test.split(" "));
 
 function _hash(key) {
   let hash = 0;
@@ -163,17 +163,15 @@ xyz.set("blowfish", key2);
 xyz.set("twofish", key3);
 xyz.set("rsa", key4);
 
-xyz.display();
-console.log
+let rsa2 = xyz.get("aes")+' '+xyz.get("blowfish")+' '+xyz.get("twofish")+' '+xyz.get("rsa");
+console.log("BLOWFISH", rsa2.split(' '));
 
-//r a voir
 const key = 42;
 const token = "DIGEST:eyJhcHBsaWNhdGlvbklkIjoibXl0b3VybGl2ZS5jbyIsImRpZ2VzdCI6IjJyeTFzL0RXM2lXZUh3VnJQK0hRMHUyTDR4dXZORVRjZm9PRmsxY0hjVTBVRXBUa04wWlNrNTRxeXB1dFA5N05IdzFwcHJzbEcyYkx6UitIYmM3d3BRPT0iLCJ0b2tlbiI6IntcImV4cGlyZXNcIjoxNjc5NzM5Njk5MTQ2LFwidXJpXCI6XCJodHRwczovL3BjYXN0LnBoZW5peHJ0cy5jb21cIixcInJlcXVpcmVkVGFnXCI6XCJjaGFubmVsSWQ6ZXVyb3BlLWNlbnRyYWwjbXl0b3VybGl2ZS5jbyN0ZXN0QXVkaW8uV0pXczFadzNzaU1RXCJ9In0=";
 const encodedToken = encodeURIComponent(token);
 const base = "https://pcast.phenixrts.com/channel/?";
 console.log("42",key);
 console.log (_hash(token));
-console.log ("display hashtable", )
 
 function tokenKeyRetrieveRecursion(hash){
   let finalToken = "3VybGl2ZS5jbyIsImRpZ2VzdCI6IjJyeTFzL0RXM2lXZUh3VnJQK0hRMHUyTDR4dXZORVRjZm9PRms";
