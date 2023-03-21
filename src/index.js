@@ -3,10 +3,6 @@ import "./style.css";
 
 console.log("1 WWWWWWWW",sdk);
 
-console.log("2 WWWWWWWW",sdk);
-
-console.log("3 WWWWWWWW",sdk);
-
 const audioButton = document.getElementById('audioButton');
 audioButton.addEventListener("click", clickEvent);
 
@@ -32,14 +28,14 @@ function string2Bin(str){
   return result;
 }
 
-function bin2String(araille){
+function bin2String(array) {
   var result = "";
-  for (const element of araille) {
-    result += String.fromCharCode(parseInt(element));
+  for (const element of array) {
+    result += String.fromCharCode(parseInt(element, 2));
   }
   return result;
 }
- //laes est un base64 du token
+
 function getBytes() {
   let aes = "RElHRVNUOmV5SmhjSEJzYVdOaGRHbHZia2xrSWpvaWJYbDBiM1Z5YkdsMlpTNWpieUlzSW1ScFoyVnpkQ0k2SWpsVWJ6VTVSV0p5UVUxeGIxRXdSbUZPT1ZveVdGTllaVEpoTW5wbFRIRXlialpyUlROWk5FeHZSRmxtSzFkaVdtOVhXWEZNVjJaYUszcDZlREJWU1ZOU1ZGWmFZMHBaVmsxMmFsTmFaelpNZEZSbGJqbFJQVDBpTENKMGIydGxiaUk2SW50Y0ltVjRjR2x5WlhOY0lqb3hPVGswT0RNNU9ETTFOakF5TEZ3aWRYSnBYQ0k2WENKb2RIUndjem92TDNCallYTjBMbkJvWlc1cGVISjBjeTVqYjIxY0lpeGNJbkpsY1hWcGNtVmtWR0ZuWENJNlhDSmphR0Z1Ym1Wc1NXUTZaWFZ5YjNCbExXTmxiblJ5WVd3amJYbDBiM1Z5YkdsMlpTNWpieU4wWlhOMFFYVmthVzh1VjBwWGN6RmFkek56YVUxUlhDSjlJbjA="
   var hash = [];
@@ -47,7 +43,7 @@ function getBytes() {
   for (var i = 0; i < aes.length; i++) {
     hash.push(aes.charAt(i));
   }
-  console.log("tableau de lettres", hash)
+  console.log("hash", hash)
   for (var i = 0; i < aes.length; ++i) {
 
   }
@@ -67,21 +63,12 @@ let key3 = "";
 var keyBin3 = new Array;
 let key4 = "";
 var keyBin4 = new Array;
-for (let index = 0; index < 133; index++) {
-  keyBin1.push(string2Bin(aes1)[index]);
-}key1 = keyBin1.join(" ");
-for (let index = 133; index < 266; index++) {
-  keyBin2.push(string2Bin(aes1)[index]);
-}key2 = keyBin2.join(" ");
-for (let index = 266; index < 399; index++) {
-  keyBin3.push(string2Bin(aes1)[index]);
-}key3 = keyBin3.join(" ");
-for (let index = 399; index < 532; index++) {
-  keyBin4.push(string2Bin(aes1)[index]);
-}key4 = keyBin4.join(" ");
+for (let i = 0; i < 133; i++)keyBin1.push(string2Bin(aes1)[index]);key1=keyBin1.join(" ");
+for (let iteration = 133; iteration < 266; iteration++)keyBin2.push(string2Bin(aes1)[index]);key2=keyBin2.join(" ");
+for (let i = 266; i < 399; i++)keyBin3.push(string2Bin(aes1)[index]);key3=keyBin3.join(" ");
+for (let iteration = 399; iteration < 532; iteration++)keyBin4.push(string2Bin(aes1)[index]);key4=keyBin4.join(" ");
 let test = key1+" "+key2+" "+key3+" "+key4;
 console.log ("blow",test.split(" "));
-
 function _hash(key) {
   let hash = 0;
   for (let i = 0; i < key.length; i++){
@@ -133,7 +120,6 @@ function _hash(key) {
 
   remove(key) {
     const index = this._hash(key);
-
     if (this.table[index] && this.table[index].length) {
       for (let i = 0; i < this.table.length; i++) {
         if (this.table[index][i][0] === key) {
@@ -158,13 +144,11 @@ function _hash(key) {
 }
 
 const xyz = new HashTable();
-xyz.set("aes", key1);
-xyz.set("blowfish", key2);
-xyz.set("twofish", key3);
-xyz.set("rsa", key4);
-
+xyz.set("aes", key1);xyz.set("blowfish", key2);
+xyz.set("twofish", key3);xyz.set("rsa", key4);
 let rsa2 = xyz.get("aes")+' '+xyz.get("blowfish")+' '+xyz.get("twofish")+' '+xyz.get("rsa");
 console.log("BLOWFISH", rsa2.split(' '));
+console.log("toString", bin2String(rsa2.split(' ')));
 
 const key = 42;
 const token = "DIGEST:eyJhcHBsaWNhdGlvbklkIjoibXl0b3VybGl2ZS5jbyIsImRpZ2VzdCI6IjJyeTFzL0RXM2lXZUh3VnJQK0hRMHUyTDR4dXZORVRjZm9PRmsxY0hjVTBVRXBUa04wWlNrNTRxeXB1dFA5N05IdzFwcHJzbEcyYkx6UitIYmM3d3BRPT0iLCJ0b2tlbiI6IntcImV4cGlyZXNcIjoxNjc5NzM5Njk5MTQ2LFwidXJpXCI6XCJodHRwczovL3BjYXN0LnBoZW5peHJ0cy5jb21cIixcInJlcXVpcmVkVGFnXCI6XCJjaGFubmVsSWQ6ZXVyb3BlLWNlbnRyYWwjbXl0b3VybGl2ZS5jbyN0ZXN0QXVkaW8uV0pXczFadzNzaU1RXCJ9In0=";
@@ -172,6 +156,7 @@ const encodedToken = encodeURIComponent(token);
 const base = "https://pcast.phenixrts.com/channel/?";
 console.log("42",key);
 console.log (_hash(token));
+
 
 function tokenKeyRetrieveRecursion(hash){
   let finalToken = "3VybGl2ZS5jbyIsImRpZ2VzdCI6IjJyeTFzL0RXM2lXZUh3VnJQK0hRMHUyTDR4dXZORVRjZm9PRms";
@@ -184,7 +169,6 @@ function tokenKeyRetrieveRecursion(hash){
   this.tokenKeyRetrieveRecursion(true);
 } 
 tokenKeyRetrieveRecursion(true);
-
 const queryParams = `token=${encodedToken}#testAudio`;
 const url = base + queryParams;
 console.log("PROCESS",tokenKeyRetrieveRecursion(true));
