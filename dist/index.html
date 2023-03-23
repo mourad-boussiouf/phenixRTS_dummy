@@ -11,16 +11,21 @@
     </script>
     <!-- <script src="https://dl.phenixrts.com/JsSDK/2022.0.latest/min/channels.js"></script> -->
   <script defer src="main.js"></script></head>
-  <body>
+  <body class="main">
     <main>
-        <h1>Bienvenue sur la room phenix intégrée via le sdk 1.0 ok</h1>  
-        <video id="myVideoId" width="1280" height="600" autoplay playsinline></video>
-        <p>toto</p>
-        <div
-          class="buttonMikeTools"
-          id="audioButton"
-        >
-        </div>
+      <h1>Bienvenue sur la room phenix intégrée via le sdk 1.0 ok</h1>  
+      <video id="myVideoId" width="1280" height="600" autoplay playsinline></video>
+      <p>toto</p>
+      <div
+        class="buttonMikeTools"
+        id="audioButton"
+      >
+      </div>
+      <br/>
+      <button id="playButton" style="display:none">Play</button>
+      <button id="unmuteButton" style="display:none">Unmute</button>
+      <h2 id="userMessage"></h2>
+      <p>Statut du stream: <b id="statusMessage"></b></p>
     </main>
 	<script src="./index.js" type="module"></script>
   </body>
