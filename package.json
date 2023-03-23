@@ -10,7 +10,7 @@
     "@babel/core": "^7.21.3",
     "babel-loader": "^9.1.2",
     "html-webpack-plugin": "^5.5.0",
-    "phenix-web-sdk": "^2022.0.2",
+    "phenix-web-sdk": "^2022.0.latest",
     "style-loader": "^3.3.2",
     "webpack": "~5.76.1",
     "webpack-cli": "^5.0.1"
