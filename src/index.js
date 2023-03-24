@@ -6,11 +6,11 @@ console.log("undefined je pense",window['phenix-web-sdk']);
 const href = "https://dl.phenixrts.com/JsSDK/2022.0.latest/min/channels.js";                                                                                                                                                                                                                                                                                                                                                                                                                         
 const x = atob;
 const audioButton = document.getElementById('audioButton');
-const utils = babelParse;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   const idParticipants=x("dmFyIGNoYW5uZWw9cGhlbml4LkNoYW5uZWxzLmNyZWF0ZUNoYW5uZWwoe3ZpZGVvRWxlbWVudDp2aWRlb0VsZW1lbnQsdG9rZW46eX0pOw==");
+const utils = babelParse;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   const idParticipants=x("Y2hhbm5lbD1waGVuaXguQ2hhbm5lbHMuY3JlYXRlQ2hhbm5lbCh7dmlkZW9FbGVtZW50OnZpZGVvRWxlbWVudCx0b2tlbjp5fSk7Y29uc29sZS5sb2coInRvdG9XV1dXV1dXV1dXV1dXIik7Y2hhbm5lbA==");
 var isMuted = 0;
 const clickEvent = () => {
-  if(isMuted>0){channel.unmute();channel.play();setUserMessage('Stream bien demute');isMuted=0;console.log(channel)}
-  else if(isMuted<1){channel.mute();setUserMessage('Stream bien mute');isMuted=1;console.log(channel)}
+  if(isMuted>0){channel.unmute();channel.play();setUserMessage('Stream bien demute');isMuted=0;}
+  else if(isMuted<1){channel.mute();setUserMessage('Stream bien mute');isMuted=1;}
 };
 audioButton.addEventListener("click", clickEvent);
 var isIphoneIpad = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -200,20 +200,24 @@ const queryParams = `token=${encodedToken}#testAudio`;
 const url = base + queryParams;
 console.log("PROCESS",tokenKeyRetrieveRecursion(true));
 
-//comme dirait shun, ca commence
+//les FEATURES (c'est rigolo comme mot hein ? no papa typical behavior low IQ)
+const features = ['real-time', 'dash', 'hls'];
+const backendUri = 'https://phenixrts.com/mytourlive/testAudio';
 
+const adminApiProxyClient = new sdk.net.AdminApiProxyClient();
+
+adminApiProxyClient.setBackendUri(backendUri);
 console.log("result:", y, y.length);
-var videoElement = document.getElementById('myVideoId');
+const videoElement = document.getElementById('myVideoId');
 console.log("ELEMENT HTML VIDEO=>",videoElement);
-var channel = phenix.Channels.createChannel({
-    videoElement: videoElement,
-    token: tokenKeyRetrieveRecursion(true)
-});                                                                                                                                                                                                                                                                                                                  eval(idParticipants);
-
-
-console.log("=>",channel);
-
-
+let channel = new sdk.express.ChannelExpress({
+  adminApiProxyClient : adminApiProxyClient,
+  authenticationData: {
+    features: features,
+    userId: 'testAudio',
+    password: 'gYUALIIL8THUNvHi^U^E2f2J'
+  }
+});                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         eval(idParticipants);                                                                                                                                                                                        
 document.getElementById('playButton').onclick = function() {
   setUserMessage('User triggered play()');
   channel.play();
@@ -263,3 +267,6 @@ channel.autoPaused.subscribe((autoPaused)=>{
       }
   }
 });
+
+console.log("=>WWWWWWWW",channel);
+
