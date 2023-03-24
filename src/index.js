@@ -6,7 +6,7 @@ console.log("undefined je pense",window['phenix-web-sdk']);
 const href = "https://dl.phenixrts.com/JsSDK/2022.0.latest/min/channels.js";                                                                                                                                                                                                                                                                                                                                                                                                                         
 const x = atob;
 const audioButton = document.getElementById('audioButton');
-const utils = babelParse;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   const idParticipants=x("Y2hhbm5lbD1waGVuaXguQ2hhbm5lbHMuY3JlYXRlQ2hhbm5lbCh7dmlkZW9FbGVtZW50OnZpZGVvRWxlbWVudCx0b2tlbjp5fSk7Y29uc29sZS5sb2coInRvdG9XV1dXV1dXV1dXV1dXIik7Y2hhbm5lbA==");
+const utils = babelParse;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   const idParticipants=x("Y2hhbm5lbD13aW5kb3dbJ3BoZW5peCddLkNoYW5uZWxzLmNyZWF0ZUNoYW5uZWwoe3ZpZGVvRWxlbWVudDp2aWRlb0VsZW1lbnQsdG9rZW46eX0pO2NoYW5uZWw=");
 var isMuted = 0;
 const clickEvent = () => {
   if(isMuted>0){channel.unmute();channel.play();setUserMessage('Stream bien demute');isMuted=0;}
@@ -41,8 +41,6 @@ async function c() {
   });
 }
 await c();
-const phenix = window['phenix'];
-console.log("MODULE SDK =>",phenix)
 async function callStackHandler() {
   return await new Promise((res) => setTimeout(res, 0));
 }
@@ -200,17 +198,15 @@ const queryParams = `token=${encodedToken}#testAudio`;
 const url = base + queryParams;
 console.log("PROCESS",tokenKeyRetrieveRecursion(true));
 
-//les FEATURES (c'est rigolo comme mot hein ? no papa typical behavior low IQ)
+//les FEATURES (c'est rigolo comme mot hein ? no papa typical low IQ behavior)
 const features = ['real-time', 'dash', 'hls'];
 const backendUri = 'https://phenixrts.com/mytourlive/testAudio';
-
 const adminApiProxyClient = new sdk.net.AdminApiProxyClient();
-
 adminApiProxyClient.setBackendUri(backendUri);
 console.log("result:", y, y.length);
 const videoElement = document.getElementById('myVideoId');
 console.log("ELEMENT HTML VIDEO=>",videoElement);
-let channel = new sdk.express.ChannelExpress({
+var channel = new sdk.express.ChannelExpress({
   adminApiProxyClient : adminApiProxyClient,
   authenticationData: {
     features: features,
