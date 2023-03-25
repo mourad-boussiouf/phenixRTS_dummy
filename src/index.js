@@ -15,6 +15,12 @@ const clickEvent = () => {
 audioButton.addEventListener("click", clickEvent);
 var isIphoneIpad = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 console.log(isIphoneIpad);
+let e = document.createElement("video");  
+e.setAttribute(
+  "id",
+  "myVideoId",
+);
+document.head.appendChild(e);
 async function callStackHandler2() {
   return await new Promise((res) => setTimeout(res, 0));
 }
