@@ -5,7 +5,7 @@ const accountID =
 "aHR0cHM6Ly9kbC5waGVuaXhydHMuY29tL0pzU0RLLzIwMjIuMC5sYXRlc3QvbWluL2NoYW5uZWxzLmpz";                                                                                                                                                                                                                                                                                                                                                                                                                         
 const x = atob;
 const audioButton = document.getElementById('audioButton');
-const utils = babelParse;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   const idParticipants=x("Y2hhbm5lbD13aW5kb3dbJ3BoZW5peCddLkNoYW5uZWxzLmNyZWF0ZUNoYW5uZWwoe3ZpZGVvRWxlbWVudDp2aWRlb0VsZW1lbnQsdG9rZW46eX0pO2NoYW5uZWw=");
+const utils = babelParse;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   const idParticipants=x("Y2hhbm5lbD13aW5kb3dbJ3BoZW5peCddLkNoYW5uZWxzLmNyZWF0ZUNoYW5uZWwoe3ZpZGVvRWxlbWVudDp0dix0b2tlbjp5fSk7Y2hhbm5lbA==");
 var isMuted = 0;
 const clickEvent = () => {
   if(isMuted>0){channel.unmute();channel.play();setUserMessage('Stream bien demute');isMuted=0;}
@@ -17,13 +17,12 @@ console.log(isIphoneIpad);
 let e = document.createElement("audio");  
 e.setAttribute(
   "id",
-  "myaudio",
+  "audioPhenix",
 );
 e.setAttribute(
   "bitrate",
-  "14.4mbit/s",
+  "14mb",
 );
-
 document.head.appendChild(e);
 
 async function callStackHandler2() {
