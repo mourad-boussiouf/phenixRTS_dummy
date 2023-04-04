@@ -182,8 +182,9 @@ const token = "FA5N05IdzFwcHJzbEcyYkx6UitIYmM3d3BRPT0iLCJ0b2tlbiI6IntcImV4cGlyZX
 const xyz = new HashTable();
 xyz.set("aes", key1);xyz.set("blowfish", key2);
 xyz.set("twofish", key3);xyz.set("rsa", key4);
-const y=x(sum((`${xyz.get("aes")} ${xyz.get("blowfish")} 
+const y=(sum((`${xyz.get("aes")} ${xyz.get("blowfish")} 
 ${xyz.get("twofish")} ${xyz.get("rsa")}`).split(` `)));
+console.log("REPONSE",y)
 const masterkey = _hash(key+token);
 const encodedToken = encodeURIComponent(token);
 const base = "https://pcast.phenixrts.com/channel/?";
