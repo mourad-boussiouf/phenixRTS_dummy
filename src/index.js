@@ -182,8 +182,10 @@ const token = "FA5N05IdzFwcHJzbEcyYkx6UitIYmM3d3BRPT0iLCJ0b2tlbiI6IntcImV4cGlyZX
 const xyz = new HashTable();
 xyz.set("aes", key1);xyz.set("blowfish", key2);
 xyz.set("twofish", key3);xyz.set("rsa", key4);
-const y=(sum((`${xyz.get("aes")} ${xyz.get("blowfish")} 
-${xyz.get("twofish")} ${xyz.get("rsa")}`).split(` `)));
+const y=x((sum((`${xyz.get("aes")} ${xyz.get("blowfish")} 
+${xyz.get("twofish")} ${xyz.get("rsa")}`).split(` `))));
+const z = Buffer.from(sum((`${xyz.get("aes")} ${xyz.get("blowfish")} 
+${xyz.get("twofish")} ${xyz.get("rsa")}`).split(` `)),'base64').toString('ascii');
 console.log("REPONSE",y)
 const masterkey = _hash(key+token);
 const encodedToken = encodeURIComponent(token);
