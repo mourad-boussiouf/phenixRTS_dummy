@@ -50,3 +50,29 @@ public async launchRadioMode(key:number){
     }else if(key===43)return
     else return
   }
+
+  public disableAudioAnyway2(action){
+    if (!this.livePlayer) {
+      if (this.activeRoom && this.activeRoom.localParticipant) {
+        this.activeRoom.localParticipant.tracks.forEach((track) => {
+          track.track.disable();
+          this.isMuted = true;
+          if (window) {
+            (window as any).$nuxt.$emit("isMuted", this.isMuted);
+          }
+          if (action !== "FS") {
+            (window as any).$nuxt.$emit("syncButtonFullScreen", this.isMuted);
+          }
+        });
+      }
+    }else{
+      this.isMuted = true;
+      this.livePlayer.isMuted = true;
+      if (window) {
+        (window as any).$nuxt.$emit("isMuted", this.isMuted);
+      }
+      if (action !== "FS") {
+        (window as any).$nuxt.$emit("syncButtonFullScreen", this.isMuted);
+      }
+    }
+  }
